@@ -10,3 +10,7 @@ This repo is for reproducing the [How to handle unauthorized route?](https://git
 
 - Borrowed `src/app.js` & `src/bootstrap.js` files from Laravel
 - Also added simple pages for the demo
+
+3 - Installed [InertiaCore](https://github.com/kapi2289/InertiaCore) package and added `AddInertia`, `AddViteHelper` services and added `UseInertia` middleware
+
+- Also changed [HomeController](./Controllers/HomeController.cs) to render inertia pages.

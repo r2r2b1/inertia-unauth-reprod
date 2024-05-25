@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using inertia_unauth_reprod.Models;
+using InertiaCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace inertia_unauth_reprod.Controllers;
 
@@ -15,12 +17,18 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        return Inertia.Render("Welcome");
     }
 
     public IActionResult Privacy()
     {
-        return View();
+        return Inertia.Render("Privacy");
+    }
+
+    [Authorize]
+    public IActionResult Authorized()
+    {
+        return Inertia.Render("Authorized");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
