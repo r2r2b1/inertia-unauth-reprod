@@ -1,4 +1,7 @@
+using inertia_unauth_reprod.Data;
+using inertia_unauth_reprod.Data.Models;
 using InertiaCore.Extensions;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +9,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddInertia();
 builder.Services.AddViteHelper();
+
+
+builder.Services.AddDbContext<ApplicationDbContext>();
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(opts => opts.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/auth/login";
+});
 
 var app = builder.Build();
 
