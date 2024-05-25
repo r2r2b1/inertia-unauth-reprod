@@ -5,3 +5,8 @@ This repo is for reproducing the [How to handle unauthorized route?](https://git
 ## Steps
 
 1 - Initialized the project using `dotnet new mvc`
+
+2 - Initialized simple vite vue project and changed the config by following the [InertiaCore](https://github.com/kapi2289/InertiaCore) readme.
+
+- Borrowed `src/app.js` & `src/bootstrap.js` files from Laravel
+- Also added simple pages for the demo
