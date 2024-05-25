@@ -19,7 +19,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(opts => opts.SignIn.
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.LoginPath = "/auth/login";
+    options.LoginPath = "/Home/Login";
 });
 
 var app = builder.Build();

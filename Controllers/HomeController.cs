@@ -25,6 +25,11 @@ public class HomeController : Controller
         return Inertia.Render("Privacy");
     }
 
+    public IActionResult Login()
+    {
+        return Inertia.Render("Login");
+    }
+
     [Authorize]
     public IActionResult Authorized()
     {

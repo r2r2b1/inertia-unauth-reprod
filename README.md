@@ -17,7 +17,7 @@ This repo is for reproducing the [How to handle unauthorized route?](https://git
 
 4 - Added Installed EntityFramework with sqlite and [ApplicationDbContext](./Data//ApplicationDbContext.cs) for sake of Identity framework. And added `AddDbContext` and `AddIdentity` directives to [Program.cs]('./Program.cs')
 
-
+5 - Added a simple Login page
 
 Now when you run the project and click on the authorized link you should encounter with the issue.
 
@@ -25,4 +25,4 @@ Now when you run the project and click on the authorized link you should encount
 Run the following command:
 ```
 cd ClientApp && npm install && npm run build && cd .. && dotnet run
-````
+```
